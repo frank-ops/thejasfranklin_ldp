@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+</head>
+<body >
+    <div  class="container">
+         <img class="logo" src="images.png" alt="img">
+            <nav >
+                <ul id="list">
+                    <li><a href="home_final.html">home</a></li>
+                    <li><a href="contactme.html">contact me</a></li>
+                    <li><a href="about.html">about</a></li>
+                </ul>
+            </nav>
+            <img onclick="getmenu()" class="menu" src="menu.png" alt="">
+    </div>
+    <div class="gall">
+        <img class="ele" src="im1.jpg" alt="img">
+        <img class="ele" src="im2.jpg" alt="img">
+        <img class="ele" src="im3.jpg" alt="img">
+        <img class="ele" src="im4.jpg" alt="img">
+        <img class="ele" src="im5.jpg" alt="img">
+        <img class="ele" src="im6.jpg" alt="img">
+        <img class="ele" src="im7.jpg" alt="img">
+        <img class="ele" src="im8.jpg" alt="img">
+        <img class="ele" src="im9.jpg" alt="img">
+    </div>
+    <script>
+        var menu=document.getElementById("list");
+        menu.style.maxHeight="0px";
+        var k=false;
+        function getmenu()
+        {
+            if(menu.style.maxHeight=="0px")
+            {
+                menu.style.maxHeight="140px";
+                document.getElementsByClassName("menu")[0].src="cross.png";
+                document.getElementsByClassName("menu")[0].style.width="18px";
+            }
+            else
+            {
+                 menu.style.maxHeight="0px";
+                 document.getElementsByClassName("menu")[0].src="menu.png";
+                 document.getElementsByClassName("menu")[0].style.width="20px";
+            }
+           
+        }
+       
+  
+    </script>
+</body>
+</html>
