@@ -340,7 +340,7 @@ function gen_bill(obj){
             let times=tables[obj.id]['items'][i];
             let t=tables[obj.id]['items'][i] * items[i]['price']
             delete tables[obj.id]['items'][i];
-            let ut=document.createTextNode(`${name} x ${times} ----------------------------------------------------------${t}`)
+            let ut=document.createTextNode(`${name} (${items[i]['price']}) x ${times} ----------------------------------------------------------${t}`)
             let gt=document.createElement('p')
             gt.appendChild(ut);
             target.appendChild(gt);
