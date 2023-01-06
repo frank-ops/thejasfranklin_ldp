@@ -38,24 +38,37 @@ let items={
 }
 function add_item()
 {
+    try{
     dname=document.getElementById("Dname").value;
-    document.getElementById("Dname").value=""
     dname=dname.split(" ").join("_");
-    console.log(dname)
     name=document.getElementById("name").value;
-    document.getElementById("name").value=""
     course=document.getElementById("course").value;
-    document.getElementById("course").value=""
     type=document.querySelector('input[name="type"]:checked').value;
-    document.querySelector('input[name="type"]:checked').value="unchecked"
     price=document.getElementById("price").value;
-    document.getElementById("price").value=""
+    if(name.length!=0 && course.length!=0 && dname.length!=0 && type.length!=0 && price.length!=0 && price!='0'){
     let p={name:name,course:course,type:type,price:price}
     items[dname]=p;
+    document.getElementById("Dname").value=""
+    document.getElementById("name").value=""
+    document.getElementById("course").value=""
+    document.querySelector('input[name="type"]:checked').value="unchecked"
+    document.getElementById("price").value=""
     console.log(items[dname]);
     closemodal2();
     menuload();
     tableload();
+    }
+    else if(price=='0'){
+        window.alert("price should not be zero please change")
+    }
+    else{
+        window.alert("please don't leave the fields empty");
+    }
+  }
+  catch(TypeError)
+  {
+    window.alert("please don't leave the fields empty");
+  }
 }
 function menuload(){
     let P=document.getElementsByClassName('bdy')[1];
@@ -79,6 +92,28 @@ function menuload(){
         console.log(i);
     }
 }
+function psearch(s,b)
+{
+    if(s.length<b.length){
+        return psearch(b,s);
+    }
+    let b1="";
+    for(let i=s.length-1;i>=s.length-b.length;i--)
+    {
+        b1=s[i]+b1;
+    }
+    if(b1==b)return true;
+    for(let i=s.length-b.length-1;i>=0;i--)
+    {
+        b1=b1.slice(0,-1);
+        b1=s[i]+b1;
+        console.log(b1);
+        if(b1==b){
+            return true
+        };
+    }
+    return false;
+}
 function filter_menu(){
     let sl={};
     let count=0;
@@ -89,24 +124,25 @@ function filter_menu(){
         menuload();
         return;
     }
-    else{
+    else if(s.length>2){
         for(let i in items){
             let p=i;
-            if(i.split("_").join(" ")==s)
+            if(psearch(i.split("_").join(" "),s))
             {
                 sl[i]=items[i];
                 count++;
                 
             }
-            else if(items[p]["name"]==s){
+            else if(psearch(items[p]["name"],s)){
                 sl[i]=items[i];
                 count++;
             }
-            else if(items[p]["course"]==s){
+            else if(psearch(items[p]["course"],s)){
                 sl[i]=items[i];
                 count++;
             }
             else if(items[p]["type"]==s){
+                console.log(s+" "+items[p]["type"]);
                 sl[i]=items[i];
                 count++;
             }
@@ -142,7 +178,7 @@ function filter_menu(){
 function srchtble(){
 let sd=document.getElementsByClassName("tble_srch")[0].value;
 let tl=['t1','t2','t3','t4','t5','t6','t7','t8','t9']
-if(sd=="all" || sd=="All" || sd.length==0){
+if(sd=="all" || sd=="All" || sd.length==0 || sd=="t" || sd=="ta" || sd=="tab" || sd=="tabl" || sd=="table"){
 for(let i =0;i<9;i++){
     document.getElementsByClassName('bdy')[0].style.display="flex";
     document.getElementById(tl[i]).style.display="flex";
@@ -245,8 +281,8 @@ function openmodal(obj){
             p.setAttribute("id",`${i}`);
             p.setAttribute("class",`${c}`);
             p.setAttribute('value',`${tables[obj]["items"][i]}`);
-            p.style.padding="5px";
-            p.style.margin="5px";
+            p.style.padding="1px";
+            p.style.margin="6px";
             P.appendChild(p);
             let p2=document.createElement("button");
             p2.setAttribute("onclick",`increment(this)`)
@@ -266,6 +302,8 @@ function openmodal(obj){
             p4.style.padding="5px";
             p4.style.margin="5px";
             P.appendChild(p4);
+            P.style.display="flex";
+            P.style.justifyContent="flex-end"
             R.appendChild(P);
             c+=1;
             tp++;
@@ -277,8 +315,8 @@ function openmodal(obj){
        let h2=document.createTextNode(pp);
        h1.append(h2);
        h1.setAttribute('id','contrib')
+       h1.style.fontWeight="bold"
        console.log(h1)
-       document.getElementById("contents").append(h1)
        gr=document.createElement("button")
        gr.setAttribute('class',"gen_btn")
        gr.setAttribute("onclick",`gen_bill(${obj.id})`)
@@ -289,12 +327,14 @@ function openmodal(obj){
         gr.style.display="none";
        }
        else{
-        gr.style.display="inline-block";
+        gr.style.display="flex";
+        gr.style.justifyContent="center";
+        gr.style.marginLeft="70px";
        }
        document.getElementById("contents").appendChild(R);
+       document.getElementById("contents").append(h1)
        document.getElementById("contents").appendChild(gr);
        console.log("exec")
-       
     }
 }
 function increment(ob1){
@@ -340,7 +380,7 @@ function gen_bill(obj){
             let times=tables[obj.id]['items'][i];
             let t=tables[obj.id]['items'][i] * items[i]['price']
             delete tables[obj.id]['items'][i];
-            let ut=document.createTextNode(`${name} x ${times} ----------------------------------------------------------${t}`)
+            let ut=document.createTextNode(`${name} (${items[i]['price']}) x ${times} ----------------------------------------------------------${t}`)
             let gt=document.createElement('p')
             gt.appendChild(ut);
             target.appendChild(gt);
