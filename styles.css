@@ -236,6 +236,10 @@ padding-right: 18rem;
     .m2{
         width:35%;
     }
+    .modal-bdy{
+        width:max-content;
+        height: max-content;
+    }
 }
 
 
