@@ -233,9 +233,6 @@ padding-right: 18rem;
         grid-template-rows: 1fr 1fr;
         max-height: 1104.1px;
     }
-    .m2{
-        width:35%;
-    }
     .modal-bdy{
         width:max-content;
         height: max-content;
