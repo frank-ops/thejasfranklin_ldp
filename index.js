@@ -435,4 +435,5 @@ function new_item(){
 function closemodal2()
 {
     document.getElementsByClassName("m2")[0].style.display="none";
+    
 }
