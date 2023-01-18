@@ -5,7 +5,7 @@
 
 const printName = name => "Hi " + name;
 
-console.log(printName("Ishtiaq"));
+console.log(printName("franklin"));
 
 // Rewrite the following code using template literals
 // const printBill = (name, bill) => {
@@ -14,7 +14,7 @@ console.log(printName("Ishtiaq"));
 
 const printBill = (name, bill) => `Hi ${name}, please pay: ${bill}`;
 
-console.log(printBill("Ishtiaq", 100));
+console.log(printBill("franklin", 100));
 
 
 // Modify the following code such that the object properties are destructured and logged.
