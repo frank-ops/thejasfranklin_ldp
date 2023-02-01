@@ -98,6 +98,9 @@ input:focus{
     justify-content: center;
     margin: 1rem;
 }
+.cell{
+    height:6rem !important;
+}
 .icn{
    translate: -35px;
    background-color:rgba(255, 255, 255, 0.149) ;
