@@ -89,7 +89,6 @@ function menuload(){
         p.appendChild(c2);
         console.log(p);
         P.appendChild(p);
-        console.log(i);
     }
 }
 function psearch(s,b)
