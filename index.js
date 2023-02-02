@@ -5,6 +5,7 @@ let closemodal= () => {
     modal.style.display="none";
     tableload();
 }
+let PP=document.getElementsByClassName('bdy')[1];
 let f= document.getElementById("fill_up");
 let f1=f;
 let dname;
@@ -70,10 +71,9 @@ function add_item()
     window.alert("please don't leave the fields empty");
   }
 }
-function menuload(){
-    let P=document.getElementsByClassName('bdy')[1];
+function menuload(P=PP,item=items){
     removeAllChildNodes(P);
-    for(let i in items)
+    for(let i in item)
     {
         let p=document.createElement("div");
         p.setAttribute('class','cells');
@@ -151,27 +151,9 @@ function filter_menu(){
         document.getElementsByClassName('bdy')[1].style.display="none";
     }
     else{
-        let P=document.getElementsByClassName('bdy')[1];
-        removeAllChildNodes(P);
+        let Pl=document.getElementsByClassName('bdy')[1];
         document.getElementsByClassName('bdy')[1].style.display="flex";
-        for(let i in sl)
-        {
-            let p=document.createElement("div");
-            p.setAttribute('class','cells');
-            let c1=document.createElement("h3");
-            c1.setAttribute('draggable','true');
-            c1.setAttribute('ondragstart','start(event)')
-            let c2=document.createElement("p");
-            let t1=document.createTextNode(i.split("_").join(" "));
-            let t2=document.createTextNode("price : "+items[i]['price'])
-            c1.appendChild(t1);
-            c2.appendChild(t2);
-            p.appendChild(c1);
-            p.appendChild(c2);
-            console.log(p);
-            P.appendChild(p);
-            console.log(i);
-        }
+        menuload(P=Pl,sl)
     }
 }
 function srchtble(){
@@ -402,7 +384,7 @@ function closemodal3(){
     let target=document.getElementsByClassName("modal-body3")[0];
     let target2=document.getElementsByClassName("db")[0];
     modal3.style.display="none";
-    generate_pdf();
+  //  generate_pdf();
     modal3.removeChild(target2);
     tableload();
     closemodal();
