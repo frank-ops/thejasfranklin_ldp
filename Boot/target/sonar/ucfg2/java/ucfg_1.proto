@@ -1,0 +1,25 @@
+
+Acom.example.boot.pupil.PupilController#getPupil()Ljava/util/List;j
+`/home/frang/Downloads/spring_poc/Boot2/src/main/java/com/example/boot/pupil/PupilController.java ("1*‡
+1
+ (˜
+•
+
+ ()
+%0#com.example.boot.pupil.PupilService"__id*X
+
+__unknown_file (<*:(
+&com.example.boot.pupil.PupilController"
+pupilService¸µ
+
+ (!
+%1java.util.List">com.example.boot.pupil.PupilService#getPupil()Ljava/util/List;*G
+
+__unknown_file (+
+)
+%0#com.example.boot.pupil.PupilService2
+getPupil()""
+ ("
+
+%1java.util.ListB*(
+&com.example.boot.pupil.PupilControllerH

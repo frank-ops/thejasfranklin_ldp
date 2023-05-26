@@ -1,0 +1,147 @@
+
+9com.example.boot.pupil.Pupil#toString()Ljava/lang/String;`
+V/home/frang/Downloads/spring_poc/Boot2/src/main/java/com/example/boot/pupil/Pupil.java; ;("1*Â
+1< <([
+Y
+< =(
+%0java.lang.String"__concat*
+< <(
+
+Pupil{*
+= =(
+id=n
+l
+= =(
+%1java.lang.Long"__id*D
+
+__unknown_file ((*&
+com.example.boot.pupil.Pupil"
+idx
+v
+< =(
+%2java.lang.String"__concat*$
+< =(
+
+%0java.lang.String*"
+= =(
+
+%1java.lang.Longn
+l
+< >(
+%3java.lang.String"__concat*$
+< =(
+
+%2java.lang.String*
+> >(
+
+, name='r
+p
+> >(!
+%4java.lang.String"__id*F
+
+__unknown_file (**(
+com.example.boot.pupil.Pupil"
+namez
+x
+< >(!
+%5java.lang.String"__concat*$
+< >(
+
+%3java.lang.String*$
+> >(!
+
+%4java.lang.Stringh
+f
+< >((
+%6java.lang.String"__concat*$
+< >(!
+
+%5java.lang.String*
+>$ >((
+\'l
+j
+< ?(
+%7java.lang.String"__concat*$
+< >((
+
+%6java.lang.String*
+? ?(
+
+, dob=t
+r
+? ?(
+%8java.time.LocalDate"__id*E
+
+__unknown_file ()*'
+com.example.boot.pupil.Pupil"
+dob}
+{
+< ?(
+%9java.lang.String"__concat*$
+< ?(
+
+%7java.lang.String*'
+? ?(
+
+%8java.time.LocalDatem
+k
+< @(
+%10java.lang.String"__concat*$
+< ?(
+
+%9java.lang.String*
+@ @(
+
+, age=j
+h
+< @(
+%11java.lang.String"__concat*%
+< @(
+
+%10java.lang.String*
+@ @(
+""q
+o
+< A(
+%12java.lang.String"__concat*%
+< @(
+
+%11java.lang.String*
+A A(
+	, email='t
+r
+A A(#
+%13java.lang.String"__id*G
+
+__unknown_file (+*)
+com.example.boot.pupil.Pupil"
+email}
+{
+< A(#
+%14java.lang.String"__concat*%
+< A(
+
+%12java.lang.String*%
+A A(#
+
+%13java.lang.Stringj
+h
+< A(*
+%15java.lang.String"__concat*%
+< A(#
+
+%14java.lang.String*
+A& A(*
+\'i
+g
+< B(
+%16java.lang.String"__concat*%
+< A(*
+
+%15java.lang.String*
+B B(
+}"%
+< B(
+
+%16java.lang.StringB 
+com.example.boot.pupil.PupilH

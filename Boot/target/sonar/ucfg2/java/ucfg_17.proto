@@ -1,0 +1,15 @@
+
+:com.example.boot.pupil.Pupil#getDob()Ljava/time/LocalDate;`
+V/home/frang/Downloads/spring_poc/Boot2/src/main/java/com/example/boot/pupil/Pupil.javaU U("1*¬
+1V V(t
+r
+V V(
+%0java.time.LocalDate"__id*E
+
+__unknown_file ()*'
+com.example.boot.pupil.Pupil"
+dob"'
+V V(
+
+%0java.time.LocalDateB 
+com.example.boot.pupil.PupilH
