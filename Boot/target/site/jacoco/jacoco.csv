@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Boot,com.example.boot,BootApplication,0,8,0,0,0,3,0,2,0,2
+Boot,com.example.boot.pupil,Pupil,0,76,0,0,0,27,0,13,0,13
+Boot,com.example.boot.pupil,PupilController,12,51,0,0,0,14,2,7,2,7
+Boot,com.example.boot.pupil,PupilService,0,45,0,4,0,13,0,6,0,4

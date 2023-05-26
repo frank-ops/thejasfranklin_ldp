@@ -1,0 +1,5 @@
+com/example/boot/pupil/PupilService.class
+com/example/boot/pupil/PupilRepo.class
+com/example/boot/pupil/PupilController.class
+com/example/boot/pupil/Pupil.class
+com/example/boot/BootApplication.class

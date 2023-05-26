@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PupilService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Boot</a> &gt; <a href="index.source.html" class="el_package">com.example.boot.pupil</a> &gt; <span class="el_source">PupilService.java</span></div><h1>PupilService.java</h1><pre class="source lang-java linenums">package com.example.boot.pupil;
+
+
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class PupilService {
+    PupilRepo pr;
+
+    @Autowired
+    private HttpServletResponse response;
+
+<span class="fc" id="L19">    public PupilService(PupilRepo pr) {</span>
+<span class="fc" id="L20">        this.pr=pr;</span>
+<span class="fc" id="L21">    }</span>
+
+    public List&lt;Pupil&gt; getPupil(){
+<span class="fc" id="L24">        return pr.findAll();</span>
+    }
+
+    public void postPupil(Pupil p){
+<span class="fc" id="L28">        Optional&lt;Pupil&gt; np=pr.findByEmail(p.getEmail());</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (np.isEmpty()) {</span>
+<span class="fc" id="L30">            pr.save(p);</span>
+        }
+        else{
+<span class="fc" id="L33">            response.setStatus(400);</span>
+        }
+<span class="fc" id="L35">    }</span>
+
+    public void deleteById(Long id){
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        if (pr.existsById(id)){</span>
+<span class="fc" id="L39">           pr.deleteById(id);</span>
+        }
+        else{
+<span class="fc" id="L42">           response.setStatus(400);</span>
+        }
+<span class="fc" id="L44">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

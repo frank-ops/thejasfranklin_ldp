@@ -1,0 +1,21 @@
+
+>com.example.boot.pupil.PupilService#getPupil()Ljava/util/List;g
+]/home/frang/Downloads/spring_poc/Boot2/src/main/java/com/example/boot/pupil/PupilService.java ("1*…
+1 (ˆ
+…
+ (&
+%0 com.example.boot.pupil.PupilRepo"__id*K
+
+__unknown_file (/*-%
+#com.example.boot.pupil.PupilService"
+prÆÃ
+ (
+%1java.util.List"Porg.springframework.data.repository.ListCrudRepository#findAll()Ljava/util/List;*D
+
+__unknown_file ((
+&
+%0 com.example.boot.pupil.PupilRepo2	findAll()""
+ (
+
+%1java.util.ListB'%
+#com.example.boot.pupil.PupilServiceH
